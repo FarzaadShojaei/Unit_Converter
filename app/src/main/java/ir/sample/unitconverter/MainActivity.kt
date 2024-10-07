@@ -48,12 +48,8 @@ fun UnitCoverter(){
     }
 }
 
-
-
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    UnitConverterTheme {
-
-    }
+fun UnitConverterPreview(){
+    UnitCoverter();
 }
