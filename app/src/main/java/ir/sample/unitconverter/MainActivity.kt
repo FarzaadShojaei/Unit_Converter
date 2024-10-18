@@ -6,11 +6,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -31,7 +35,7 @@ class MainActivity : ComponentActivity() {
                 modifier= Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
             ) {
-
+                UnitConverterPreview();
             }
 
 
@@ -50,11 +54,20 @@ fun UnitCoverter(){
         Text("Unit Converter")
         OutlinedTextField(value = "", onValueChange = {})
         Row {
-            val context= LocalContext.current;
+           Box{
+               Button(onClick = { /*TODO*/ }) {
+                   Text("Select")
+                   Icon(Icons.Default.ArrowDropDown, contentDescription = "Arrow Down")
+               }
+           }
+            Box{
+                Button(onClick = { /*TODO*/ }) {
+                    Text("Select")
+                    Icon(Icons.Default.ArrowDropDown, contentDescription = "Arrow Down")
+                }
+            }
 
-    Button(onClick = { Toast.makeText(context,"Thanks for clicking!", Toast.LENGTH_LONG).show() } ){
-        Text("Click Me")
-    }
+
 
         }
         Text("Result:")
