@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
                 modifier= Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
             ) {
-                UnitConverterPreview();
+                UnitCoverter();
             }
 
 
@@ -66,9 +66,10 @@ fun UnitCoverter(){
         // Here all the UI element will be stacked next to each other
 
 
-        Text("Unit Converter", modifier = Modifier.padding(100.dp));
+        Text("Unit Converter");
         Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(value = "", onValueChange = {})
+        Spacer(modifier = Modifier.height(16.dp))
         Row {
            Box{
                Button(onClick = { /*TODO*/ }) {
@@ -77,7 +78,7 @@ fun UnitCoverter(){
                }
                DropdownMenu(expanded = true, onDismissRequest = {/*TODO*/} ) {
                    DropdownMenuItem(
-                       text = { Text("Centimiters") },
+                       text = { Text("Centimeters") },
                        onClick = { /*TODO*/ })
 
 
@@ -94,7 +95,7 @@ fun UnitCoverter(){
 
 
                    DropdownMenuItem(
-                       text = { Text("Melimiteres") },
+                       text = { Text("Millimetres") },
                        onClick = { /*TODO*/ }
                    )
                }
@@ -104,7 +105,39 @@ fun UnitCoverter(){
             Box{
                 Button(onClick = { /*TODO*/ }) {
                     Text("Select")
-                    Icon(Icons.Default.ArrowDropDown, contentDescription = "Arrow Down")
+                    Icon(Icons.Default.ArrowDropDown,
+                        contentDescription = "Arrow Down")
+                }
+                Box{
+                    Button(onClick = { /*TODO*/ }) {
+                        Text("Select")
+                        Icon(Icons.Default.ArrowDropDown,
+                            contentDescription = "Arrow Down")
+                    }
+                    DropdownMenu(expanded = true, onDismissRequest = {/*TODO*/} ) {
+                        DropdownMenuItem(
+                            text = { Text("Centimeters") },
+                            onClick = { /*TODO*/ })
+
+
+                        DropdownMenuItem(
+                            text = { Text("Meters") },
+                            onClick = { /*TODO*/ }
+                        )
+
+
+                        DropdownMenuItem(
+                            text = { Text("Feet") },
+                            onClick = { /*TODO*/ }
+                        )
+
+
+                        DropdownMenuItem(
+                            text = { Text("Millimetres") },
+                            onClick = { /*TODO*/ }
+                        )
+                    }
+
                 }
             }
 
@@ -112,7 +145,6 @@ fun UnitCoverter(){
 
         }
         Spacer(modifier = Modifier.height(16.dp))
-
         Text("Result:")
     }
 }
